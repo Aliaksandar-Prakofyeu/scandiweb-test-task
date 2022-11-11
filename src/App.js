@@ -1,11 +1,17 @@
+import {Component} from 'react'
+import HeaderContainer from './components/Header/HeaderContainer'
+import AllMainComponentsWithRouter from './components/AllMainComponentsWithRouter'
 
 
-function App() {
-    return (
-        <div>
-            <h1>Placeholder</h1>
-        </div>
-    )
+class App extends Component {
+    render() {
+        return (
+            <>
+                <HeaderContainer />
+                <AllMainComponentsWithRouter/>
+            </>
+        )
+    }
 }
 
 export default App
