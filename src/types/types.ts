@@ -1,3 +1,5 @@
+import {store} from '../store/store'
+
 export interface NavData {
     categories: Category[]
     currencies: Currency[]
@@ -24,7 +26,7 @@ export interface Currency {
     symbol: string
 }
 
-export interface Category {
+export interface Category{
     name: string
     products: Product[]
 }
@@ -60,7 +62,7 @@ export interface Price {
 }
 
 export type Cart = {
-    id: Product['id']
+    id: Product["id"]
     options: Record<string, string>
     prices: Price[]
     quantity: number
@@ -78,7 +80,7 @@ export type ShopState = {
 
 export type AddToCartPayload = Omit<Cart, 'quantity'>
 
-export type UpdateCartPayload = {newQuantity: number} & Omit<Cart, 'quantity' | 'prices'>
+export type UpdateCartPayload = { newQuantity: number} & Omit<Cart, 'quantity' | 'prices'>
 
 export type Store = typeof StorageManager
 

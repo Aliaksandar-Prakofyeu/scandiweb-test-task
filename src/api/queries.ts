@@ -10,7 +10,7 @@ export const GET_NAV_DATA =
     }`
 
 export const GET_SINGLE_CAT = (name: string | undefined): string => {
-    const input = name ? `(input:{title:'${name}'})` : ''
+    const input = name ? `(input:{title:"${name}"})` : ""
     return (
         `query getCategory {
             category${input} { 

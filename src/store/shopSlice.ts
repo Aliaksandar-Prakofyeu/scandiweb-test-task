@@ -1,20 +1,21 @@
 import {AddToCartPayload, Currency, ShopState, UpdateCartPayload} from '../types/types'
 import {CART_KEY, CURRENCY_KEY} from '../api/const'
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
-import {getSpecificProductInCart} from '../components/Cart/cartUtils/cartUtils'
+import {getSpecificProductInCart} from '../components/Cart/cartUtils/getSpecificProductInCart'
 
 const initialState: ShopState = {
-    category: '',
-    currency: JSON.parse(localStorage.getItem(CURRENCY_KEY) || 'null'),
+    category: "",
+    currency: JSON.parse(localStorage.getItem(CURRENCY_KEY) || "null"),
     cart: {
-        products: JSON.parse(localStorage.getItem(CART_KEY) || '[]'),
+        products: JSON.parse(localStorage.getItem(CART_KEY) || "[ ]"),
         isShow: false
     },
     countOnPage: 6
 }
 
-const shop = createSlice({
-    name: 'shop', initialState,
+const shopSlice = createSlice({
+    name: "shop",
+    initialState,
     reducers: {
         setCategory: (state, action: PayloadAction<string>) => {
             state.category = action.payload
@@ -38,20 +39,18 @@ const shop = createSlice({
             state.cart.isShow = action.payload
         },
         updateCart: (state, action: PayloadAction<UpdateCartPayload>) => {
-            const {newQuantity, id, options} = action.payload
+            const {newQuantity, options, id} = action.payload
             const specificProduct = getSpecificProductInCart(state.cart.products, id, options)
-            if(!specificProduct)
-                if(newQuantity < 1) {
+            if (!specificProduct) return
+            if (newQuantity < 1) {
                 const deleteInd = state.cart.products.indexOf(specificProduct)
-                state.cart.products.splice( deleteInd, 1)
-            } else{
+                state.cart.products.splice(deleteInd, 1)
+            } else {
                 specificProduct.quantity = newQuantity
             }
         }
-
     }
-
 })
 
-export const{setCategory, setCurrency, addToCart, clearCart, setIsShow, updateCart} = shop.actions
-export default shop.reducer
+export const {setCategory, setCurrency, addToCart, clearCart, setIsShow, updateCart} = shopSlice.actions
+export default shopSlice.reducer

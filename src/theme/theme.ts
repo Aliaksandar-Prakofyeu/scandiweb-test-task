@@ -1,6 +1,6 @@
-import {DefaultTheme} from 'styled-components'
+export type ThemeType = typeof theme
 
-const theme: DefaultTheme = {
+const theme = {
     main: {
         color: '#5ECE7B',
         textColor: '#1D1F22',
