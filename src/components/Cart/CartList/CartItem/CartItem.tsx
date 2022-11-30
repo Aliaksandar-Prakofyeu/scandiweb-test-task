@@ -11,6 +11,7 @@ import CartItemImage from './CartItemImage'
 const StyledCartItem = styled.div`
   display: flex;
   gap: 24px;
+  padding: 24px 0;
   border-top: 1px solid #e5e5e5;
 
   &:last-child {

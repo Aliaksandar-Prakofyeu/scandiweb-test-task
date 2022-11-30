@@ -5,7 +5,7 @@ import {RootState, Category} from '../../../../types/types'
 import {connect, ConnectedProps} from 'react-redux'
 
 const StyledCategory = styled.li`
-    padding: 32px 16px 32px;
+    padding: 27px 16px 32px;
     border-bottom: 2px solid transparent;
     &.active{
       color: ${props => props.theme.main.color};

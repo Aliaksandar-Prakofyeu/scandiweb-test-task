@@ -14,10 +14,15 @@ const StyledCurrency = styled.div`
     gap: 10px;
     border: none;
     background: transparent;
-
+    cursor: pointer;
     .sign {
       font-size: 18px;
       font-weight: 500;
+    }
+    .arrow{
+      display: flex;
+      width: 8px;
+      height: 4px;
     }
   }
 `
@@ -48,7 +53,8 @@ class CurrencySelect extends Component<Props, State> {
             <StyledCurrency ref={this.dropOpenRef}>
                 <button type="button" onClick={this.toggleDropOpen}>
                     <span className="sign" role="button">{selectedCurr?.symbol}</span>
-                    <img src={downArrow} className="arrow" alt="arrow"/>
+                    <img src={downArrow} className="arrow" alt="arrow" style={{
+                        transform: isDropOpen ? "rotateZ(180deg)" : "rotateZ(0deg)",}}/>
                 </button>
                 {isDropOpen && (
                     <CurrencySelectList toggleDropClose={this.toggleDropClose} dropOpenRef={this.dropOpenRef}/>

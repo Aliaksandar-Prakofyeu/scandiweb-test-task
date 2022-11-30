@@ -9,7 +9,7 @@ import {calculateTotalCost} from '../../../../Cart/cartUtils/calculateTotalCost'
 const StyledContent = styled.div`
   .title {
     margin-bottom: 32px;
-    line-height: 1.6;
+    line-height: 26px;
   }
 
   .total__price {

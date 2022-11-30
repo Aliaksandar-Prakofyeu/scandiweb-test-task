@@ -11,20 +11,23 @@ const StyledHeaderContainer = styled.header`
   display: flex;
   place-items: center;
   position: sticky;
+  top: 0;
   height: 80px;
   width: 100%;
   z-index: 15;
+  background-color: #fff;
 
   .header__wrapper {
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 0 101px;
     justify-content: space-between;
 
     .header__active {
       display: flex;
       align-items: center;
       gap: 11px;
+      height: 40px;
     }
   }
 `

@@ -12,8 +12,8 @@ const StyledCurrencySelect = styled.div`
   font-weight: 500;
   line-height: 1.6;
   padding: 20px 0;
-  background-color: ${props => props.theme.main.backgroundColor};
-  top: 30px;
+  background-color: #FFFFFF;
+  top: 35px;
   left: -20px;
   width: 114px;
   box-shadow: 0 4px 35px rgb(168 172 176/ 19%);
@@ -25,15 +25,15 @@ const StyledCurrencySelect = styled.div`
     transition: background-color 0.3s ease;
 
     &.active {
+      background-color: #DDDDDD;
+
+      &:hover {
+        background-color: #DDDDDD;
+      }
+    }
+
+    &:hover {
       background-color: #EEEEEE;
-
-      &:hover {
-        background-color: #EEEEEE;
-      }
-
-      &:hover {
-        background-color: #EEEEEE;
-      }
     }
   }
 `
