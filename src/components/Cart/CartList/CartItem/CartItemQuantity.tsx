@@ -9,13 +9,13 @@ const StyledCartItemQuantity = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  .btn{
+  .button{
     width: 45px;
     height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
-    & > svg {
+    & > img {
       width: 15px;
       height: 15px;
     }
@@ -35,14 +35,14 @@ class CartItemQuantity extends Component<Props>{
     render(): ReactNode{
         const {updateCart, quantity} = this.props
         return(
-            <StyledCartItemQuantity>
+            <StyledCartItemQuantity className='item__quantity'>
                 <Button child={<img src={Plus}  alt='plus'/>}
-                        className='btn'
+                        className='button'
                         variant='outline'
                         onClick={() => updateCart(quantity + 1)}/>
                 <span className='quantity'>{quantity}</span>
                 <Button child={<img src={Minus}  alt='minus'/>}
-                        className='btn'
+                        className='button'
                         variant='outline'
                         onClick={() => updateCart(quantity - 1)}/>
             </StyledCartItemQuantity>

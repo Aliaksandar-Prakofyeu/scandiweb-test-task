@@ -5,26 +5,6 @@ import CartMenuContent from './CartMenuContent/CartMenuContent'
 import {withRouter, WithRouterProps} from '../../../tools/hoc/withRouter'
 import Button from '../../../tools/ui/Button'
 
-const StyledOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  cursor: pointer;
-  z-index: 11;
-`
-
-const StyledWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 50%;
-  max-width: 1300px;
-  width: 100%;
-  transform: translateX(calc(-50% - 15px));
-  z-index: 12;
-`
-
 const StyledCartMenu = styled.div`
   position: absolute;
   top: 80px;
@@ -40,6 +20,29 @@ const StyledCartMenu = styled.div`
     }
   }
 `
+
+const StyledOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  cursor: pointer;
+  z-index: 11;
+  background-color: rgba(0,0,0,0.3);
+`
+
+const StyledWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 50%;
+  max-width: 1300px;
+  width: 100%;
+  transform: translateX(calc(-50% - 15px));
+  z-index: 12;
+`
+
+
 
 type Props = {
     handleClose: () => void
@@ -80,7 +83,7 @@ class CartMenu extends Component<Props> {
                                             height={'43px'}
                                             onClick={this.openCartPage}/>
                                     <Button child={'Check Out'}
-                                            variant={'outline'}
+                                            variant={'contained'}
                                             width={'140px'}
                                             height={'43px'}/>
                                 </div>

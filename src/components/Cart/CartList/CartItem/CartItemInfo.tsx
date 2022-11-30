@@ -21,7 +21,7 @@ const StyledCartItemInfo = styled.div`
       font-weight: 400;
     }
   }
-  .price{
+  .item__price{
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: 700;
@@ -42,12 +42,12 @@ class CartItemInfo extends Component<Props> {
 
 
         return (
-            <StyledCartItemInfo>
+            <StyledCartItemInfo className="cart__item_info">
                 <Link to={`/product/${productData.id}`} className="item__title">
                     <span className="item__brand">{productData.brand}</span>{' '}
                     <span className="item__name">{productData.name}</span>
                 </Link>
-                <div className="price">
+                <div className="item__price">
                     {selectedCurr?.symbol}
                     {price}
                 </div>

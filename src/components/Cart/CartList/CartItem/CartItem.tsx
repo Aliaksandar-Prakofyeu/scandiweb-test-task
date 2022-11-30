@@ -43,7 +43,7 @@ class CartItem extends Component<Props> {
         const {quantity, productResponse, selectedCurr, options} = this.props
         const {data} = productResponse
         return (
-            <StyledCartItem>
+            <StyledCartItem className="cart__item">
                 {data && (
                     <>
                         <CartItemInfo productData={data} options={options} selectedCurr={selectedCurr}/>

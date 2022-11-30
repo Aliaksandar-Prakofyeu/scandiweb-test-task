@@ -68,7 +68,7 @@ class CartItemImage extends Component<Props, State> {
         const {imgIndex} = this.state
         const {gallery, productName} = this.props
         return (
-            <StyledCartItemImage>
+            <StyledCartItemImage className='item__image'>
                 <img src={gallery[imgIndex]} alt={productName} width={200} height={288}/>
                 {gallery.length > 1 && (
                     <StyledButtonGroup>
@@ -80,8 +80,8 @@ class CartItemImage extends Component<Props, State> {
                         </button>
                         <button type="button"
                                 className="arrow__btn"
-                                onClick={() => this.handleChangeImage(imgIndex - 1)}
-                                disabled={imgIndex === 0}>
+                                onClick={() => this.handleChangeImage(imgIndex + 1)}
+                                disabled={imgIndex === gallery.length - 1 }>
                             <img src={RightArr} alt={'right'}/>
                         </button>
                     </StyledButtonGroup>

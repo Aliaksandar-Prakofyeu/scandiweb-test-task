@@ -12,20 +12,110 @@ const StyledContent = styled.div`
     line-height: 1.6;
   }
 
-  .total-price {
+  .total__price {
     display: flex;
     justify-content: space-between;
     font-size: 16px;
     margin-bottom: 32px;
 
-    .total-price__title {
+    .total__price_title {
       font-weight: 500;
       font-family: ${props => props.theme.fonts.roboto};
     }
 
-    .total-price__amount {
+    .total__price_amount {
       font-weight: 700;
       font-family: ${props => props.theme.fonts.raleway};
+    }
+  }
+
+  .cart__list {
+    max-height: 420px;
+    overflow-y: auto;
+    margin-bottom: 40px;
+
+    .cart__item {
+      padding: 0;
+      gap: 8px;
+      overflow: hidden;
+      border: none;
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+
+      .cart__item_info {
+        .item__title {
+          display: inline;
+          margin-bottom: 5px;
+          font-size: 16px;
+          line-height: 1.6;
+
+          .item__brand {
+            font-weight: 300;
+          }
+
+          .item__name {
+            font-weight: 300;
+          }
+        }
+
+        .item__price {
+          margin-bottom: 8px;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.6;
+        }
+      }
+
+      .attr__name {
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: none;
+      }
+
+      .attr__val {
+        .attr__btn {
+          cursor: default;
+
+          &.text {
+            padding: 0 2px;
+            height: 24px;
+            margin-right: 8px;
+            min-width: 24px;
+            max-width: min-content;
+            font-size: 14px;
+            font-weight: 400;
+          }
+
+          &.color {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      .item__quantity {
+        .button {
+          width: 24px;
+          height: 24px;
+
+          img {
+            width: 10px;
+            height: 10px;
+          }
+        }
+
+        .quantity {
+          font-size: 16px;
+        }
+      }
+
+      .item__image {
+        flex-basis: 121px;
+      }
     }
   }
 `
@@ -45,9 +135,9 @@ class CartMenuContent extends Component<Props> {
                 </div>
                 <CartList cartProds={cartItems}/>
                 <div>
-                    <div className="total-price">
-                        <span className="total-price__title">Total</span>
-                        <span className="total-price__amount">{selectedCurr?.symbol}{totalPrice}</span>
+                    <div className="total__price">
+                        <span className="total__price_title">Total</span>
+                        <span className="total__price_amount">{selectedCurr?.symbol}{totalPrice}</span>
                     </div>
                 </div>
             </StyledContent>
