@@ -2,7 +2,7 @@ import {Component, memo, ReactNode} from 'react'
 import {connect, ConnectedProps} from 'react-redux'
 import {RootState} from '../../../types/types'
 import {getSingleCat} from '../../../api/api'
-import {setCategory} from '../../../store/shopSlice'
+import {setCategory} from '../../../store/shop'
 import CategoryContent from './CategoryContent'
 
 type OwnProps = { catName: string | undefined }

@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit'
 import {api} from '../api/api'
-import shopSlice from './shopSlice'
+import shopSlice from './shop'
 import {localStorageMiddleware} from '../middleware/localStorageMiddleware'
 
 export const store = configureStore({

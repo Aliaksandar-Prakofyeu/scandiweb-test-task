@@ -60,7 +60,7 @@ class CategoryContent extends Component<Props, State> {
                             ))}
                         </div>
                         {catData.products.length > amountOfShown && (
-                            <Button child="Show more"
+                            <Button child="Show all"
                                     variant="contained"
                                     className="cat__show__btn"
                                     onClick={this.handleNextPage}/>

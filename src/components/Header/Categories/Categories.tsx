@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {connect, ConnectedProps} from 'react-redux'
 import {RootState} from '../../../types/types'
 import {getNavData} from '../../../api/api'
-import {setCurrency} from '../../../store/shopSlice'
+import {setCurrency} from '../../../store/shop'
 import CategoryItem from './Category/CategoryItem'
 
 const StyledCategories = styled.nav`

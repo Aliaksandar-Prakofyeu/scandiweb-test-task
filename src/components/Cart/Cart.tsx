@@ -7,7 +7,6 @@ import {calculateTotalCost} from './cartUtils/calculateTotalCost'
 import {TAX} from '../../api/const'
 import CartList from './CartList/CartList'
 import Button from '../tools/ui/Button'
-import {clearCart} from '../../store/shopSlice'
 import {calculateQuantityCart} from './cartUtils/calculateQuantityCart'
 
 const StyledCart = styled.div`
@@ -49,9 +48,6 @@ type Props = WithRouterProps & ConnectedProps<typeof connector>
 
 class Cart extends Component<Props> {
 
-    handleClearCart = (): void => {
-        clearCart()
-    }
 
     render(): ReactNode {
         const {cartProds, selectedCurr} = this.props
@@ -95,7 +91,6 @@ class Cart extends Component<Props> {
                         variant="contained"
                         width="279px"
                         height="43px"
-                        onClick={this.handleClearCart}
                         disabled={cartProds.length === 0}/>
             </StyledCart>
         )
@@ -108,11 +103,7 @@ const mapState = (state: RootState) => ({
     selectedCurr: state.shop.currency
 })
 
-const mapDispatch = {
-    clearCart: clearCart
-}
 
-
-const connector = connect(mapState, mapDispatch)
+const connector = connect(mapState)
 
 export default connector(withRouter(Cart))

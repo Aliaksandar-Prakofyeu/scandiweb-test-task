@@ -1,4 +1,4 @@
-import cartLogo from '../../../assets/VectorHeaderCartLogo.svg'
+import cartLogo from '../../../assets/HeaderCart.svg'
 import {Component, ReactNode} from 'react'
 import styled from 'styled-components'
 

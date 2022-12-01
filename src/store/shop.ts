@@ -4,17 +4,17 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {getSpecificProductInCart} from '../components/Cart/cartUtils/getSpecificProductInCart'
 
 const initialState: ShopState = {
-    category: "",
-    currency: JSON.parse(localStorage.getItem(CURRENCY_KEY) || "null"),
+    category: '',
+    currency: JSON.parse(localStorage.getItem(CURRENCY_KEY) || 'null'),
     cart: {
-        products: JSON.parse(localStorage.getItem(CART_KEY) || "[ ]"),
+        products: JSON.parse(localStorage.getItem(CART_KEY) || '[ ]'),
         isShow: false
     },
     countOnPage: 6
 }
 
-const shopSlice = createSlice({
-    name: "shop",
+const shop = createSlice({
+    name: 'shop',
     initialState,
     reducers: {
         setCategory: (state, action: PayloadAction<string>) => {
@@ -31,9 +31,6 @@ const shopSlice = createSlice({
             } else {
                 state.cart.products.unshift({options, id, prices, quantity: 1})
             }
-        },
-        clearCart: state => {
-            state.cart.products = []
         },
         setIsShow: (state, action: PayloadAction<boolean>) => {
             state.cart.isShow = action.payload
@@ -52,5 +49,5 @@ const shopSlice = createSlice({
     }
 })
 
-export const {setCategory, setCurrency, addToCart, clearCart, setIsShow, updateCart} = shopSlice.actions
-export default shopSlice.reducer
+export const {setCategory, setCurrency, addToCart, setIsShow, updateCart} = shop.actions
+export default shop.reducer

@@ -3,7 +3,7 @@ import {connect, ConnectedProps} from 'react-redux'
 import {Currency, RootState} from '../../../../types/types'
 import styled from 'styled-components'
 import {getNavData} from '../../../../api/api'
-import {setCurrency} from '../../../../store/shopSlice'
+import {setCurrency} from '../../../../store/shop'
 
 
 const StyledCurrencySelect = styled.div`

@@ -1,7 +1,7 @@
 import {Component, ReactNode} from 'react'
 import {connect, ConnectedProps} from 'react-redux'
 import {RootState} from '../../../types/types'
-import {setIsShow} from '../../../store/shopSlice'
+import {setIsShow} from '../../../store/shop'
 import styled from 'styled-components'
 import HeaderCartButton from './HeaderCartButton'
 import CartMenu from './CartMenu/CartMenu'

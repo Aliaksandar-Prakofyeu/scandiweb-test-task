@@ -2,7 +2,7 @@ import {Component, ReactNode} from 'react'
 import styled from 'styled-components'
 import Categories from './Categories/Categories'
 import logo from '../../assets/logo.svg'
-import Wrapper from '../Wrapper/Wrapper'
+import Wrapper from '../../styles/Wrapper/Wrapper'
 import CurrencySelect from './CurrencySelect/CurrencySelect'
 import HeaderCart from './HeaderCart/HeaderCart'
 

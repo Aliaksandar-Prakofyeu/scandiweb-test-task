@@ -1,1 +1,2 @@
-Readme for Scandiweb test task
+My solution for Scandiweb React.js developer position test task.
+

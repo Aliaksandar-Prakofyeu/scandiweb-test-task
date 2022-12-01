@@ -6,7 +6,7 @@ import {getPriceByCurrency} from '../Cart/cartUtils/getPriceByCurrency'
 import Attribute from '../Cart/CartList/CartItem/Attribute'
 import Button from '../tools/ui/Button'
 import {parseHTML} from '../tools/utils/parseHTML'
-import {addToCart} from '../../store/shopSlice'
+import {addToCart} from '../../store/shop'
 
 
 const StyledProductInfo = styled.div`
