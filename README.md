@@ -1,2 +1,2 @@
-My solution for Scandiweb React.js developer position test task.
+My solution for the Scandiweb React.js developer position test task.
 
