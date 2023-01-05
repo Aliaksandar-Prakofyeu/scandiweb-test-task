@@ -16,8 +16,10 @@ const StyledHeaderContainer = styled.header`
   width: 100%;
   z-index: 15;
   background-color: #fff;
+  
 
   .header__wrapper {
+    max-width: 1440px;
     display: flex;
     align-items: center;
     padding: 0 101px;

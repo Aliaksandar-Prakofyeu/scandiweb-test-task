@@ -120,7 +120,7 @@ class CategoryItem extends Component<Props> {
                     <div className="name">{brand} {name}</div>
                     <span className="price">
                             {price?.currency.symbol}
-                        {price?.amount}
+                        {(Math.round(price?.amount * 100) / 100).toFixed(2)}
                         </span>
                 </Link>
                 {inStock && (

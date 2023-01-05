@@ -4,9 +4,10 @@ import styled from 'styled-components'
 import Button from '../../../tools/ui/Button'
 
 const StyledAttribute = styled.div`
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-bottom: 24px;
   }
+
   .attr__name {
     margin-bottom: 8px;
     font-size: 18px;
@@ -14,10 +15,12 @@ const StyledAttribute = styled.div`
     font-weight: 700;
     text-transform: uppercase;
   }
-  .attr__val{
-    .attr__btn{
+
+  .attr__val {
+    .attr__btn {
       font-family: sans-serif;
-      &.text{
+
+      &.text {
         margin-right: 12px;
         width: 63px;
         height: 45px;
@@ -25,10 +28,12 @@ const StyledAttribute = styled.div`
         font-weight: 400;
         letter-spacing: 0.05em;
       }
-      &.color{
+
+      &.color {
         margin-right: 8px;
         width: 36px;
         height: 36px;
+        border: 1px solid rgb(161, 161, 161)
       }
     }
   }

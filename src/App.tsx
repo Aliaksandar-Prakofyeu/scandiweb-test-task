@@ -7,10 +7,12 @@ import Wrapper from './styles/Wrapper/Wrapper'
 class App extends Component {
     render(): ReactNode {
         return (
-            <Wrapper>
+            <>
                 <HeaderContainer/>
-                <AllMainComponentsWithRouter/>
-            </Wrapper>
+                <Wrapper>
+                    <AllMainComponentsWithRouter/>
+                </Wrapper>
+            </>
         )
     }
 }

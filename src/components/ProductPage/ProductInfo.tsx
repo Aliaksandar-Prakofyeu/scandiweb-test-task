@@ -5,8 +5,9 @@ import {connect, ConnectedProps} from 'react-redux'
 import {getPriceByCurrency} from '../Cart/cartUtils/getPriceByCurrency'
 import Attribute from '../Cart/CartList/CartItem/Attribute'
 import Button from '../tools/ui/Button'
-import {parseHTML} from '../tools/utils/parseHTML'
+import parse from 'html-react-parser'
 import {addToCart} from '../../store/shop'
+
 
 
 const StyledProductInfo = styled.div`
@@ -40,6 +41,9 @@ const StyledProductInfo = styled.div`
     line-height: 1.6;
     & > * {
       font-size: inherit;
+    }
+    ul li{
+      list-style: disc;
     }
   }
 `
@@ -102,7 +106,7 @@ class ProductInfo extends Component<Props, State> {
                 <div className="attr__name">Price:</div>
                 <div className="prod__price">
                     {price?.currency.symbol}
-                    {price?.amount}
+                    {(Math.round(price?.amount * 100) / 100).toFixed(2)}
                 </div>
                 <Button child="Add to Cart"
                         variant="contained"
@@ -110,7 +114,7 @@ class ProductInfo extends Component<Props, State> {
                         onClick={this.handleAddToCart}
                         width="292px"
                         height="52px"/>
-                <div className="prod__description">{parseHTML(description)}</div>
+                <div className="prod__description">{parse(description)}</div>
             </StyledProductInfo>
         )
     }

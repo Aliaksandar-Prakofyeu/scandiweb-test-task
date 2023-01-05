@@ -43,7 +43,7 @@ class ProductPage extends Component<Props> {
             <>
                 {data && (
                     <StyledProductPage>
-                        <ProductImage gallery={data.gallery} productName={data.name}/>
+                        <ProductImage inStock={data.inStock} gallery={data.gallery} productName={data.name}/>
                         <ProductInfo product={data}/>
                     </StyledProductPage>
                 )}

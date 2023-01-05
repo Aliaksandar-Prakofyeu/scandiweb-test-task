@@ -1,14 +1,34 @@
 import {Component, ReactNode} from 'react'
 import {Product} from '../../types/types'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
-const StyledProductImage = styled.div`
+const StyledProductImage = styled.div<{ inStock: boolean }>`
   display: flex;
   flex-direction: row-reverse;
+  
   .main__img{
+    &::after {
+      ${props => (props.inStock ? '' : cover)}
+    }
+    display: flex;
+    position: relative;
+    max-width: 610px;
+    max-height: 511px;
+    
     img{
       object-fit: contain;
       width: 100%;
+    }
+    .out__of {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: fit-content;
+      color: #8d8f9a;
+      font-size: 24px;
+      text-align: center;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%);
     }
   }
   .img__menu{
@@ -18,6 +38,7 @@ const StyledProductImage = styled.div`
     max-height: 511px;
     direction: rtl;
     overflow-y: auto;
+    overflow-x: hidden;
     &::-webkit-scrollbar{
       width: 0.5rem;
     }
@@ -37,10 +58,22 @@ const StyledProductImage = styled.div`
     }
   }
 `
+const cover = css`
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+`
 
 type Props = {
     gallery: Product['gallery']
     productName: Product['name']
+    inStock: Product['inStock']
 }
 
 type State = { imgIndex: number }
@@ -56,16 +89,18 @@ class ProductImage extends Component<Props, State> {
     }
 
     render(): ReactNode {
-        const {gallery, productName} = this.props
+        const {gallery, productName, inStock} = this.props
         const {imgIndex} = this.state
         return (
-            <StyledProductImage>
+            <StyledProductImage inStock={inStock}>
                 <div className="main__img">
                     <img src={gallery[imgIndex]}
                          width={610}
                          height={511}
                          alt={productName}
+
                     />
+                    {!inStock && (<span className="out__of">Out of stock</span>)}
                 </div>
                 <ul className="img__menu" role="menu">
                     {gallery.map((imgSrc, index) => (
